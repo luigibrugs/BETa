@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do bicho</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Gayathri:wght@100;400;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Gayathri:wght@100;400;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Scribble&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Gayathri:wght@100;400;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Rubik+Scribble&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Gayathri:wght@100;400;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Rubik+Scribble&family=VT323&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Gayathri:wght@100;400;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=Rubik+Scribble&family=VT323&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Gayathri:wght@100;400;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Scribble&display=swap');
+        body {
+            background-color: #4B0E0E; 
+            color: white; 
+            font-family: "Quantico", sans-serif; 
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+           
+        }
+        nav.menu-lateral {
+        width: 80px;
+        height: 100%;
+        background-color: #2A0A1B;
+        font-family: "VT323", sans-serif;
+        background-size: 800px;
+        padding: 40px 0px 40px 2%;
+        box-shadow: 3px 0 0 #ffff;
+        border-radius: 2%;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transition: 0.5s;
+    }
+    nav.menu-lateral:hover {
+        width: 300px;
+        transition: 0.5s;
+
+    }
+    .botao-expandir {
+        width: 100%;
+        padding-left: 10px;
+        margin-left: -20px
+    }
+
+    .botao-expandir > i {
+        color: #fff;
+        font-size: 3rem;
+        cursor: pointer;
+    }
+
+    ul {
+        height: 100%;
+        list-style-type: none;
+    }
+    ul li.item-menu a {
+        color: #FFFF;
+        text-decoration: none;
+        font-size: 2rem;
+        padding: 20px 4%;
+        display: flex;
+        margin-bottom: 20px;
+        line-height: 40px;
+
+    }
+    ul li.item-menu{
+        transition: 0.5s;
+
+    }
+    ul li.item-menu a .txt-link {
+        margin-left: 40px;
+        transition: .2s;
+    }
+    ul li.item-menu a .txt-link:hover {
+        font-size: 3rem;
+        transition: .2s ;
+        text-shadow:
+      0 0 23px #fff,
+      0 0 20px #FFFF,
+      0 0 29px #610B4B,
+      0 0 42px #610B4B,
+      0 0 82px #610B4B,
+      0 0 92px #610B4B,
+      0 0 102px #610B4B,
+      0 0 151px #610B4B;
+    }
+    ul li.item-menu a .icone > i {
+        font-size: 30px;
+        margin-left: -31px;
+        
+    }
+
+        h1 {
+            font-size: 2.8em;
+            font-family: "Quantico", sans-serif;
+            text-shadow:
+      0 0 3px #fff;
+     
+      transition: 0.9s;
+      
+        }
+        h1:hover {
+          transition: 0.9s;
+          font-size: 3.19em;
+          text-shadow:
+      0 0 13px #fff,
+      0 0 10px #FFFF,
+      0 0 29px #610b0b,
+      0 0 42px #610b0b,
+      0 0 82px #610b0b,
+      0 0 92px #610b0b,
+      0 0 102px #610b0b,
+      0 0 151px #610b0b;
+        }
+
+        form {
+            margin-top: 100px;
+            font-size: 1.9rem;
+            text-shadow:
+      0 0 3px #fff,
+      0 0 5px #FFFF;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid white;
+            border-radius: 5px;
+            background-color: #3A0A0A;
+            color: white;
+            font-family: "Quantico  ";
+        }
+
+        input[type="submit"], input[type="button"] {
+            padding: 23px 35px;
+            margin: 13px;
+            border: none;
+            border-radius: 5px;
+            background-color: #842525;
+            color: white;
+            cursor: pointer;
+            transition: 0.9s;
+            font-size: 1.2rem;
+            font-family: "Quantico";
+        }
+
+        input[type="submit"]:hover, input[type="button"]:hover {
+            background-color: #571060; 
+            text-shadow:
+      0 0 13px #fff,
+      0 0 10px #FFFF,
+      0 0 29px #610B4B,
+      0 0 42px #610B4B,
+      0 0 82px #610B4B,
+      0 0 92px #610B4B,
+      0 0 102px #610B4B,
+      0 0 151px #610B4B;
+      transition: 0.9s ;
+
+     
+        }
+        
+        h3 {
+            margin-top: 30px;
+        }
+        .textoneon   {
+    font-size: 1.5em; 
+    color: white;
+    text-shadow:
+        0 0 5px #FFFFFF,
+        0 0 5px #FFFFFF,
+        0 0 20px #FFFFFF,
+        0 0 20px #ff2600,
+        0 0 40px #911524,
+        0 0 50px #7a247a,
+        0 0 55px #500b50;
+    font-weight: b;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+    </style>
+
+</head>
+<body>
+    
+    <center><h1>APOSTAS BETa</h1></center><br>
+
+    <center>
+        <form>
+            <p>Em qual animal você quer apostar?
+            <input type="text" id="animal" required autofocus></p>
+            <p>Qual o valor da aposta?
+            <input type="text" id="valor" required autofocus></p>
+            <br>
+            <input type="submit" value="Fazer aposta">
+            <input type="button" value="Concluir aposta" id="apostar">
+        </form>
+
+        <h3>Sua aposta: <span></span></h3>
+        <pre></pre>
+    </center>
+    <nav class="menu-lateral">
+
+      <div class="botao-expandir">
+          <i class="bi bi-list"></i>
+      </div>
+      <ul>
+          <li class="item-menu"> <!--lista 1-->
+              <a href="#">
+                  <span class="icone"><i class="bi bi-house-door-fill"></i></span>
+                  <span class="txt-link">Em breve!</span>
+              </a>
+          </li> 
+      
+          <li class="item-menu"><!--lista 2-->
+              <a href="#">
+                  <span class="icone"><i class="bi bi-gear-fill"></i></span>
+                  <span class="txt-link">Em breve!</span>
+              </a>
+          </li>
+      
+          <li class="item-menu"><!--lista 3-->
+              <a href="#">
+                  <span class="icone"><i class="bi bi-person-fill"></i></span>
+                  <span class="txt-link">Em breve!</span>
+              </a>
+          </li>
+          <li class="item-menu"><!--lista 4-->
+          <a href="#">
+                  <span class="icone"><i class="bi bi-rocket-takeoff-fill"></i></span>
+                  <span class="txt-link">Em breve!</span>
+              </a>
+          </li>
+      </ul>
+          </nav>
+          
+    <script>
+       const frm = document.querySelector("form");
+        const respNome = document.querySelector("span");
+        const respLista = document.querySelector("pre");
+        var RegistroDeApostas = [];
+        const bombAudio = new Audio('bombAudio.mp3');
+        const starAudio = new Audio('starAudio.mp3');
+
+        frm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let animal = frm.animal.value;
+            let valor = frm.valor.value;
+
+            if (animal < 26 && animal > 0 && !isNaN(animal) && valor > 0 && !isNaN(valor)) {
+                RegistroDeApostas.push({ animal: animal, valor: valor });
+                let lista = "";
+                
+                RegistroDeApostas.forEach((aposta, i) => {
+                    lista += `${i + 1}. Aposta no animal ${aposta.animal} no valor de R$${aposta.valor}\n`;
+                });
+                
+                respLista.className = "textoneon";
+                respLista.innerText = lista;
+                frm.animal.value = "";
+                frm.animal.focus();
+                frm.valor.value = "";
+                frm.valor.focus();
+            } else {
+                alert("Código ou valor inválidos");
+            }
+        });
+
+        frm.apostar.addEventListener("click", () => {
+            if (RegistroDeApostas.length == 0) {
+                alert("Primeiro realize sua aposta");
+                frm.animal.focus();
+                return;
+            }
+
+            var sorteio = Number(Math.floor(Math.random() * 25)) + 1;
+            let apostaAtual = RegistroDeApostas[0];
+
+            if (apostaAtual.animal == sorteio) {
+                starAudio.play();
+                let valorGanho = apostaAtual.valor * 2;
+                respNome.innerText = `VOCÊ GANHOU!!! O ANIMAL SORTEADO FOI O ${sorteio}, A SUA APOSTA DE R$${apostaAtual.valor} PASSA A SER R$${valorGanho}`;
+            } else {
+                bombAudio.play();
+                respNome.innerText = `VOCÊ PERDEU, O ANIMAL SORTEADO FOI O ${sorteio} E VOCÊ APOSTOU ${apostaAtual.animal}`;
+            }
+
+            RegistroDeApostas.shift();
+            let lista = "";
+            RegistroDeApostas.forEach((aposta, i) => {
+                lista += `${i + 1}. Aposta no animal ${aposta.animal} no valor de R$${aposta.valor}\n`;
+            });
+            respLista.className = "textoneon";
+            respLista.innerText = lista;
+        });
+    </script>
+</body>
+</html>
